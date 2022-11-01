@@ -1,0 +1,35 @@
+{
+  "name": "magnafacta/zalt-late",
+  "description": "Zend Late Code Execution",
+  "type": "library",
+  "require": {
+    "php": ">=8.1.0",
+    "magnafacta/zalt-util": "dev-main"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "9.*"
+  },
+  "authors": [
+    {
+      "name": "Matijs de Jong",
+      "email": "mjong@magnafacta.nl"
+    }
+  ],
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Zalt\\Late\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Zalt\\Late\\": "test\\"
+    }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/MagnaFacta/zalt-util.git"
+    }
+  ]
+}
