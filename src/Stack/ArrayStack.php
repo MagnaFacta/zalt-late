@@ -40,7 +40,7 @@ class ArrayStack extends ArrayObject implements StackInterface
      * @param string $name A name indentifying a value in this stack.
      * @return A value for $name
      */
-    public function LateGet($name)
+    public function lateGet($name)
     {
         if ($this->offsetExists($name)) {
             return $this->offsetGet($name);

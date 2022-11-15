@@ -55,7 +55,7 @@ class ObjectStack implements StackInterface
      * @param string $name A name indentifying a value in this stack.
      * @return mixed A value for $name
      */
-    public function LateGet($name)
+    public function lateGet($name)
     {
         if (property_exists($this->_object, $name)) {
             return $this->_object->$name;

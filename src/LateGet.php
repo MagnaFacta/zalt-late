@@ -49,6 +49,6 @@ class LateGet extends LateAbstract
     */
     public function __toValue(StackInterface $stack)
     {
-        return $stack->LateGet($this->_name);
+        return $stack->lateGet($this->_name);
     }
 }

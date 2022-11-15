@@ -50,7 +50,7 @@ class EmptyStack implements StackInterface
      * @param string $name A name indentifying a value in this stack.
      * @throws LateStackException
      */
-    public function LateGet($name)
+    public function lateGet($name)
     {
         if ($this->_source) {
             throw new LateStackException("No late stack defined when called from '$this->_source', but asked for '$name' parameter.");

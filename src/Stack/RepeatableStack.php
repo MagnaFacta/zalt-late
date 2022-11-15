@@ -49,7 +49,7 @@ class RepeatableStack implements StackInterface
      * @param string $name A name indentifying a value in this stack.
      * @return A value for $name
      */
-    public function LateGet($name)
+    public function lateGet($name)
     {
         $value = $this->_object->__get($name);
         if ($value instanceof LateInterface) {

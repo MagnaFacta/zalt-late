@@ -12,10 +12,12 @@
 namespace Zalt\Late;
 
 use Zalt\Late\Stack\ArrayStack;
-use Zalt\Late\Stack\BridgeStack;
 use Zalt\Late\Stack\EmptyStack;
 use Zalt\Late\Stack\ObjectStack;
 use Zalt\Late\Stack\RepeatableStack;
+use Zalt\Late\Stack\StackCombiner;
+use Zalt\Late\Stack\StackFactory;
+use Zalt\Model\Bridge\BridgeStack;
 use Zalt\Ra\Ra;
 
 /**
@@ -51,6 +53,28 @@ class Late
      * @var boolean When true Late objects should start outputting what is happening in them.
      */
     public static $verbose = false;
+
+    /**
+     * Get the current stack or none
+     *
+     * @param string $id Identifier to prevent double adding of stacks
+     * @param mixed $stack Value to be turned into stack for evaluation
+     * @return StackCombiner
+     */
+    public static function addStack(string $id, mixed $stack)
+    {
+        $oldStack = isset(self::$_stack) ? self::$_stack : null;
+        if (! $oldStack instanceof StackCombiner) {
+            self::$_stack = new StackCombiner();
+            
+            if ($oldStack instanceof StackInterface && (! $oldStack instanceof EmptyStack)) {
+                self::$_stack->addStack('orig', $oldStack);    
+            }
+        }
+        self::$_stack->addStack($id, StackFactory::createLateStack($stack));
+        
+        return self::$_stack;
+    }
 
     /**
      * Returns a late object that alternates through all the parameters used
@@ -379,26 +403,7 @@ class Late
      */
     public static function setStack($stack)
     {
-        if ($stack instanceof StackInterface) {
-            self::$_stack = $stack;
-
-        } elseif ($stack instanceof \MUtil\Model\Bridge\TableBridgeAbstract) {
-            self::$_stack = new BridgeStack($stack);
-
-        } elseif ($stack instanceof Repeatable) {
-            self::$_stack = new RepeatableStack($stack);
-
-        } elseif (Ra::is($stack)) {
-            $stack = Ra::to($stack);
-
-            self::$_stack = new ArrayStack($stack);
-
-        } elseif (is_object($stack)) {
-            self::$_stack = new ObjectStack($stack);
-
-        } else {
-            throw new LateException("Late stack set to invalid scalar type.");
-        }
+        self::$_stack = StackFactory::createLateStack($stack);
 
         return self::$_stack;
     }
