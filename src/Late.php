@@ -204,6 +204,16 @@ class Late
     }
 
     /**
+     * Get multiple names in an array
+     *
+     * @return LateGetRa
+     */
+    public static function getRa(array $names)
+    {
+        return new LateGetRa($names);
+    }
+
+    /**
      * Get the current stack or none
      *
      * @return StackInterface
