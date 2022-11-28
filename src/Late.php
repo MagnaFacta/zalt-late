@@ -361,7 +361,7 @@ class Late
      * @param mixed $stack Optional variable stack for evaluation
      * @return mixed Something not late
      */
-    public static function rise($object, $stack = null)
+    public static function rise($object, $stack = null): mixed
     {
         if ($object instanceof LateInterface || is_array($object)) {
             if (! $stack instanceof StackInterface) {
@@ -378,7 +378,7 @@ class Late
         return $object;
     }
 
-    public static function riseObject(LateInterface $object, StackInterface $stack)
+    public static function riseObject(LateInterface $object, StackInterface $stack): mixed
     {
         while ($object instanceof LateInterface) {
             $object = $object->__toValue($stack);
@@ -391,7 +391,7 @@ class Late
         return $object;
     }
 
-    public static function riseRa(array $object, StackInterface $stack)
+    public static function riseRa(array $object, StackInterface $stack): mixed
     {
         foreach ($object as $key => &$val) {
             while ($val instanceof LateInterface) {
