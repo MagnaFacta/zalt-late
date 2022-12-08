@@ -34,7 +34,11 @@ class LateGetRa extends LateAbstract
     {
         $output = [];
         foreach ($this->names as $key => $get) {
-            $output[$key] = $stack->lateGet($get);
+            if ($get instanceof LateInterface) {
+                $output[$key] = Late::rise($get, $stack);
+            } else {
+                $output[$key] = $stack->lateGet($get);
+            }
         }
         return $output;
     }
