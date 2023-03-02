@@ -1,6 +1,11 @@
-# zalt-late
-A package for defining code that will be evaluated at a later stage of code execution, usually when it has to be 
-use for to output a scalar value.
+# Late &#8800; Lazy
+Lazy evaluation is a well known paradigm, used e.g. to prevent expensive objects to initiate when they might not be needed.
+The core idea is that it **does not matter** (except in exection time) **when the code is executed**.
+
+Late programming differs from Lazy programming in the fact that it **makes a difference when the code is executed**.
+
+This is useful e.g. when you want to log time difference for the moment when, but also when you want to get a value
+at a later time, e.g. when the output is rendered to Html or output is rendered repeatedly with different values. 
 
 ## Basic workings
 
@@ -13,6 +18,7 @@ want this, you write another piece of code that performs the call late(r).
 - You want a colspan that is one less than the number of columns of a table.
 - You want the value of a variable, e.g. a count, that you will know will be determined at end of a loop. 
 - You want to repeatedly output a line, but the values in that line change for every row.
+- You want to log the time difference each time an item is called.
 
 ### Colspan example
 
