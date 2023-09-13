@@ -137,7 +137,7 @@ class ParallelRepeater implements RepeatableInterface
         return $repeater;
     }
 
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         foreach ($this->repeatables as $repeater) {
             if ($repeater->offsetExists($offset)) {
@@ -148,7 +148,7 @@ class ParallelRepeater implements RepeatableInterface
         return false;
     }
 
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         $results = array();
         foreach ($this->repeatables as $id => $repeater) {
@@ -159,12 +159,12 @@ class ParallelRepeater implements RepeatableInterface
         return $results;
     }
 
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         throw new LateException("You cannot set a Late object offset like '$offset'.");
     }
 
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         throw new LateException("You cannot unset a Late object offset like '$offset'.");
     }
