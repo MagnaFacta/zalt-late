@@ -24,18 +24,11 @@ namespace Zalt\Late;
 class LateException extends \Exception
 {
     /**
-     *
-     * @var type
-     * /
-    private $_stacktrace;
-
-    /**
      * Construct the exception
      *
      * @param  string $msg
      * @param  int $code
      * @param  \Exception $previous
-     * @param  array $stacktrace
      * @return void
      */
     public function __construct($msg = '', $code = 0, \Exception $previous = null)

@@ -38,7 +38,7 @@ class ArrayStack extends ArrayObject implements StackInterface
      * Returns a value for $name
      *
      * @param string $name A name indentifying a value in this stack.
-     * @return A value for $name
+     * @return mixed A value for $name
      */
     public function lateGet($name)
     {
@@ -58,7 +58,7 @@ class ArrayStack extends ArrayObject implements StackInterface
     /**
      * Set this stack to throw an exception
      *
-     * @param mixed $throw bool
+     * @param bool $throw bool
      * @return ArrayStack (continuation pattern_
      */
     public function setThrowOnMiss(bool $throw = true)

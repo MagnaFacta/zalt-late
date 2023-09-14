@@ -65,7 +65,7 @@ class LateAnd extends LateAbstract implements Countable
     /**
      * Add an arrya of test values to this And object
      *
-     * @param mixed $value
+     * @param array $values
      * @return LateAnd (continuation pattern)
      */
     public function addArray(array $values)

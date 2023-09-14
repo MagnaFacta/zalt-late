@@ -39,8 +39,8 @@ class ArrayAccessor extends \Zalt\Late\LateAbstract
 
     /**
      *
-     * @param mixed Possibly late array
-     * @param mixed Possibly late offset
+     * @param mixed $array Possibly late array
+     * @param mixed $offset Possibly late offset
      */
     public function __construct($array, $offset)
     {

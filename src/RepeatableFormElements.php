@@ -151,7 +151,9 @@ class RepeatableFormElements extends Repeatable
         if ($element instanceof \Zend_Form) {
             $this->_flattenForm($element, $newElements);
 
+            // @phpstan-ignore class.notFound
         } elseif ($element instanceof \MUtil\Form\Element\SubFocusInterface) {
+            // @phpstan-ignore class.notFound
             foreach ($element->getSubFocusElements() as $sub) {
                 $this->_flattenElement($sub, $newElements);
             }

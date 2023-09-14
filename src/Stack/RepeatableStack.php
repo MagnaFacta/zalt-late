@@ -47,7 +47,7 @@ class RepeatableStack implements StackInterface
      * Returns a value for $name
      *
      * @param string $name A name indentifying a value in this stack.
-     * @return A value for $name
+     * @return mixed A value for $name
      */
     public function lateGet($name)
     {

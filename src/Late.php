@@ -63,12 +63,12 @@ class Late
      */
     public static function addStack(string $id, mixed $stack)
     {
-        $oldStack = isset(self::$_stack) ? self::$_stack : null;
-        if (! $oldStack instanceof StackCombiner) {
+        if (! self::$_stack instanceof StackCombiner) {
+            $oldStack = isset(self::$_stack) ? self::$_stack : null;
             self::$_stack = new StackCombiner();
             
             if ($oldStack instanceof StackInterface && (! $oldStack instanceof EmptyStack)) {
-                self::$_stack->addStack('orig', $oldStack);    
+                self::$_stack->addStack('orig', $oldStack);
             }
         }
         self::$_stack->addStack($id, StackFactory::createLateStack($stack));
@@ -80,8 +80,7 @@ class Late
      * Returns a late object that alternates through all the parameters used
      * to call this function. (At least two , but more is allowed.)
      *
-     * @param mixed $value1
-     * @param mixed $value2
+     * @param array $args
      * @return Alternate
      */
     public static function alternate(...$args)
@@ -167,7 +166,7 @@ class Late
      * The arguments are flattened lazily into one single array
      * and then joined together without separator.
      *
-     * @param mixed $arg_array
+     * @param array $args
      * @return LateCall
      */
     public static function concat(...$args)

@@ -37,7 +37,7 @@ class GetRepeatableLate extends LateAbstract
 
     /**
      *
-     * @param RepeatableInterface $bridge
+     * @param RepeatableInterface $repeater
      * @param string $fieldName
      */
     public function __construct(RepeatableInterface $repeater, $fieldName)

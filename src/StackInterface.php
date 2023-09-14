@@ -29,7 +29,7 @@ interface StackInterface
      * Returns a value for $name
      *
      * @param string $name A name indentifying a value in this stack.
-     * @return A not late value for $name
+     * @return mixed A not late value for $name
      */
     public function lateGet($name);
 }

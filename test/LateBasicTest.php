@@ -157,6 +157,7 @@ class LateBasicTest extends TestCase
         $wrap = Late::L($class);
         $this->assertInstanceOf(ObjectWrap::class, $wrap);
 
+        // @phpstan-ignore-next-line
         $call = Late::first($wrap->a, $wrap->b, $wrap->c, $wrap->d, $wrap->e);
         $this->assertInstanceOf(LateCall::class, $call);
         $this->assertEquals('Yes', Late::raise($call));
