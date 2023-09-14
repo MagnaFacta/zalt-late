@@ -63,7 +63,7 @@ class Late
      */
     public static function addStack(string $id, mixed $stack)
     {
-        if (! self::$_stack instanceof StackCombiner) {
+        if ((! isset(self::$_stack)) || (! self::$_stack instanceof StackCombiner)) {
             $oldStack = isset(self::$_stack) ? self::$_stack : null;
             self::$_stack = new StackCombiner();
             
