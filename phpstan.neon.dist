@@ -1,8 +1,9 @@
 parameters:
 	bootstrapFiles:
 		- vendor/autoload.php
-	level: 2
+	level: 4
 	paths:
 		- src
 		- test
 	reportUnmatchedIgnoredErrors: false
+	treatPhpDocTypesAsCertain: false

@@ -79,7 +79,7 @@ class Repeatable implements RepeatableInterface
     /**
      * Return a late version of the property retrieval
      *
-     * @return LateProperty
+     * @return mixed
      */
     public function __get($name)
     {

@@ -59,7 +59,7 @@ class RepeatableFormElements extends Repeatable
     /**
      * Enable access to the elements in this repeater using $this->element
      *
-     * @var LateAbstract
+     * @var mixed
      */
     public $label;
 

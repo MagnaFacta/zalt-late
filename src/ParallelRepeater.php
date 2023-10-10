@@ -54,7 +54,7 @@ class ParallelRepeater implements RepeatableInterface
     /**
      * Return a late version of the property retrieval
      *
-     * @return LateInterface
+     * @return mixed
      */
     public function __get($name)
     {
