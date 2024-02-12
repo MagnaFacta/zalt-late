@@ -57,13 +57,6 @@ class RepeatableFormElements extends Repeatable
     public $splitHidden = false;
 
     /**
-     * Enable access to the elements in this repeater using $this->element
-     *
-     * @var mixed
-     */
-    public $label;
-
-    /**
      * Storage of the hidden elements
      *
      * @var array
@@ -84,7 +77,6 @@ class RepeatableFormElements extends Repeatable
         //
         // The other access method is: $this->{name of element renderer}
         $this->element =  new LateCall(array($this, '__current'));
-        $this->label   = Html::create('label', $this->element);
     }
 
     /**
