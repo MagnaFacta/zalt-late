@@ -25,6 +25,7 @@ use Zalt\Late\Stack\EmptyStack;
  * @license    New BSD License
  * @since      Class available since version 1.0
  */
+#[\AllowDynamicProperties]
 class Repeatable implements RepeatableInterface
 {
     /**
