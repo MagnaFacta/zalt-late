@@ -52,7 +52,7 @@ class LateBasicTest extends TestCase
         $this->assertEquals(1, Late::raise($call));
     }
 
-    public function lateCompProvider()
+    public static function lateCompProvider()
     {
         return [
             [0, '==', 1, false],

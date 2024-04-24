@@ -25,7 +25,6 @@ use Zalt\Late\Stack\EmptyStack;
  * @license    New BSD License
  * @since      Class available since version 1.0
  */
-#[\AllowDynamicProperties]
 class Repeatable implements RepeatableInterface
 {
     /**
@@ -53,6 +52,11 @@ class Repeatable implements RepeatableInterface
      * @var mixed The array or Iterator that repeats
      */
     protected $_repeater = null;
+
+    /**
+     * @var array Stroage for formatted names
+     */
+    protected array $_vars = [];
 
     /**
      *
@@ -84,9 +88,11 @@ class Repeatable implements RepeatableInterface
      */
     public function __get($name)
     {
-        $this->$name = new GetRepeatableLate($this, $name);
+        if (! isset($this->_vars[$name])) {
+            $this->_vars[$name] = new GetRepeatableLate($this, $name);
+        }
 
-        return $this->$name;
+        return $this->_vars[$name];
     }
 
     /**

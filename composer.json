@@ -8,8 +8,8 @@
   },
   "require-dev": {
     "magnafacta/zalt-html": "dev-main",
-    "phpunit/phpunit": "9.*",
-    "phpstan/phpstan": "1.11.x-dev",
+    "phpstan/phpstan": "1.*",
+    "phpunit/phpunit": "10.*",
     "shardj/zf1-future": "^1.21"
   },
   "authors": [
