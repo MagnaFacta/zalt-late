@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e3a89a73767eeeb2389f257ba9aaea8",
+    "content-hash": "9a6e2bcaf74048c177b0e4c24bc28102",
     "packages": [
         {
             "name": "dflydev/fig-cookies",
@@ -1872,6 +1872,176 @@
         }
     ],
     "packages-dev": [
+        {
+            "name": "magnafacta/zalt-html",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MagnaFacta/zalt-html.git",
+                "reference": "60a81fd862b0f1d10247371f39385d9bf8ba1d16"
+            },
+            "require": {
+                "magnafacta/zalt-late": "^1.0.0",
+                "magnafacta/zalt-loader": "^1.0.0",
+                "magnafacta/zalt-model": "^1.0.0",
+                "magnafacta/zalt-util": "^1.0.0",
+                "php": ">=8.1.0"
+            },
+            "require-dev": {
+                "laminas/laminas-diactoros": "^2.11",
+                "laminas/laminas-validator": "^2.20",
+                "mezzio/mezzio-session-ext": "^1.12",
+                "phpstan/phpstan": "1.*",
+                "phpunit/phpunit": "10.*",
+                "shardj/zf1-extras-future": "^1.12",
+                "shardj/zf1-future": "^1.21"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zalt\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Zalt\\": "test\\"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@putenv XDEBUG_MODE=coverage",
+                    "vendor/bin/phpunit  --configuration test/phpunit.xml test"
+                ],
+                "stan": [
+                    "vendor/bin/phpstan --memory-limit=512M"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Matijs de Jong",
+                    "email": "mjong@magnafacta.nl"
+                }
+            ],
+            "description": "Zend Html Creator",
+            "time": "2024-08-07T12:10:50+00:00"
+        },
+        {
+            "name": "magnafacta/zalt-loader",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MagnaFacta/zalt-loader.git",
+                "reference": "5892edc54d45ca4d58107ab4087d6e018c3f92fd"
+            },
+            "require": {
+                "magnafacta/zalt-util": "^1.0.0",
+                "php": ">=8.1.0",
+                "psr/container": "^1.0 || ^2.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "1.*",
+                "phpunit/phpunit": "10.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-psr-11": "psr-11-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zalt\\Loader\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-0": {
+                    "Zalt_Loader_": "test",
+                    "Test1_": "test",
+                    "Test2_": "test",
+                    "Test3_": "test"
+                },
+                "psr-4": {
+                    "Zalt\\Loader\\": "test\\Zalt\\Loader",
+                    "Test1\\": "test\\Test1",
+                    "Test2\\": "test\\Test2",
+                    "Test3\\": "test\\Test3"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@putenv XDEBUG_MODE=coverage",
+                    "vendor/bin/phpunit --configuration test/phpunit.xml test"
+                ],
+                "stan": [
+                    "vendor/bin/phpstan"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Matijs de Jong",
+                    "email": "mjong@magnafacta.nl"
+                },
+                {
+                    "name": "Menno Dekker",
+                    "email": "menno.dekker@erasmusmc.nl"
+                }
+            ],
+            "description": "Zend Alternative Loader",
+            "time": "2024-08-07T10:40:43+00:00"
+        },
+        {
+            "name": "magnafacta/zalt-model",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MagnaFacta/zalt-model.git",
+                "reference": "45ee831d85364069df3a3d2e0c7934faa3ae62f2"
+            },
+            "require": {
+                "magnafacta/zalt-late": "^1.0.0",
+                "magnafacta/zalt-loader": "^1.0.0",
+                "mezzio/mezzio-session": "^1.4",
+                "php": ">=8.1.0"
+            },
+            "require-dev": {
+                "ext-pdo_sqlite": "*",
+                "laminas/laminas-db": "2.*",
+                "laminas/laminas-filter": "^2.20",
+                "laminas/laminas-servicemanager": "^3.22.0",
+                "laminas/laminas-validator": "^2.20",
+                "phpstan/phpstan": "1.*",
+                "phpunit/phpunit": "10.*",
+                "symfony/yaml": "^6.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zalt\\Model\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Zalt\\Model\\": "test\\"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "@putenv XDEBUG_MODE=coverage",
+                    "vendor/bin/phpunit --configuration test/phpunit.xml test"
+                ],
+                "stan": [
+                    "vendor/bin/phpstan --memory-limit=512M"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Matijs de Jong",
+                    "email": "mjong@magnafacta.nl"
+                }
+            ],
+            "description": "Zend Alternative Model",
+            "time": "2024-08-07T11:23:51+00:00"
+        },
         {
             "name": "myclabs/deep-copy",
             "version": "1.12.0",
