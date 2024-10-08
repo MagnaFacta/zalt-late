@@ -4,7 +4,7 @@
   "type": "library",
   "require": {
     "php": ">=8.1.0",
-    "magnafacta/zalt-util": "^1.0.0"
+    "magnafacta/zalt-util": "^1.0.1"
   },
   "require-dev": {
     "phpstan/phpstan": "1.*",

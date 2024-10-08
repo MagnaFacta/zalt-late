@@ -1,4 +1,5 @@
 composer.phar
+/composer.json
 /vendor/
 /.idea
 /conposer.lock
