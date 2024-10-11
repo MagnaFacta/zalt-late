@@ -21,6 +21,7 @@ namespace Zalt\Late;
  * @license    New BSD License
  * @since      Class available since version 1.0
  */
+#[\AllowDynamicProperties]
 class StaticCall
 {
     protected $_className;

@@ -24,6 +24,7 @@ namespace Zalt\Late;
  * @license    New BSD License
  * @since      Class available since version 1.0
  */
+#[\AllowDynamicProperties]
 abstract class LateAbstract implements LateInterface
 {
     /**

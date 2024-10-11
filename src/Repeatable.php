@@ -15,7 +15,6 @@ namespace Zalt\Late;
 use ArrayObject;
 use Iterator;
 use IteratorAggregate;
-use Zalt\Late\Stack\EmptyStack;
 
 /**
  *
@@ -25,6 +24,7 @@ use Zalt\Late\Stack\EmptyStack;
  * @license    New BSD License
  * @since      Class available since version 1.0
  */
+#[\AllowDynamicProperties]
 class Repeatable implements RepeatableInterface
 {
     /**

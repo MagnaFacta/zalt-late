@@ -21,6 +21,7 @@ use Zalt\Ra\Ra;
  * @license    New BSD License
  * @since      Class available since version 1.0
  */
+#[\AllowDynamicProperties]
 class ParallelRepeater implements RepeatableInterface
 {
     protected $repeatables = array();
