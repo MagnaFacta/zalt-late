@@ -21,8 +21,12 @@ use Traversable;
  * @license    New BSD License
  * @since      Class available since version 1.0
  */
+#[\AllowDynamicProperties]
 class RepeatableByKeyValue extends Repeatable
 {
+    public GetRepeatableLate $key;
+    public GetRepeatableLate $value;
+
     /**
      *
      * @param array|Traversable $data
@@ -37,9 +41,12 @@ class RepeatableByKeyValue extends Repeatable
         $result = array();
 
         foreach($data as $key => $value) {
-            $result[] = array('key' => $key, 'value' => $value);
+            $result[] = ['key' => $key, 'value' => $value];
         }
 
         parent::__construct($result);
+
+        $this->key = new GetRepeatableLate($this, 'key');
+        $this->value = new GetRepeatableLate($this, 'value');
     }
 }
