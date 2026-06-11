@@ -37,9 +37,9 @@ class EmptyStack implements StackInterface
      *
      * Debugging late stuff is hard enough, so we can use all the easy help we can get.
      *
-     * @param string $source An optional source name to specify where this stack was created.
+     * @param string|null $source An optional source name to specify where this stack was created.
      */
-    public function __construct(string $source = null)
+    public function __construct(?string $source = null)
     {
         $this->_source = $source;
     }

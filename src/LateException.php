@@ -28,10 +28,10 @@ class LateException extends \Exception
      *
      * @param  string $msg
      * @param  int $code
-     * @param  \Exception $previous
+     * @param  null|\Exception $previous
      * @return void
      */
-    public function __construct($msg = '', $code = 0, \Exception $previous = null)
+    public function __construct($msg = '', $code = 0, ?\Exception $previous = null)
     {
         parent::__construct($msg, $code, $previous);
 
